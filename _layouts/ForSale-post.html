@@ -1,0 +1,45 @@
+---
+layout: ForSale
+---
+<div class='row'>
+    <section class='span9 post-image'>
+        <img src='{{ page.image }}' class='item-image {{ page.image-layout }}'>
+    </section>
+    <section class='span3 sidebar'>
+        <h2>Item Details</h2>
+        <div class='item-details'>
+            <p>
+                {{ content }}
+            </p>
+            <p>
+                <label>Asking Price:</label>{{ page.price }}<br/>
+                <small>All offers considered</small>
+            </p>
+            <section class='trading'>
+                <h3>Accepting trade proposals of</h3>
+                <ul class='wanted'>
+                    <li>iPhone 4 or better</li>
+                    <li>iPad</li>
+                    <li>3g Verizon Android with a good camera</li>
+                </ul>
+            </section>
+            <h3>Contact Info</h3>
+            <p>
+                <label>E-mail: <a href='mailto:jsimpsonjr00@gmail.com?subject={{ page.title }}'>jsimpsonjr00@gmail.com</a></label><br/>
+                <label>Voicemail: 444 - 4076</label><br/>
+                <small>Local Cash Only as is no refunds, no warranty</small>
+            </p>
+        </div>
+        <div>
+        	<p>
+        		<a href='/'>Need web development work done?</a>
+        	</p>
+        </div>
+        <div class="woot">
+            <a href="http://midealshop.appspot.com/AutoWoot/" class="btn btn-primary" target='_external'>Do you Woot?</a>
+            <a href='https://chrome.google.com/webstore/detail/hbhcmbeenpajepmjiddeaojpbdlpfmlb' target='_external' title='Chrome Extension'>
+                <img src='/images/Chrome-32.png'>
+            </a>
+        </div>
+    </section>
+</div>
