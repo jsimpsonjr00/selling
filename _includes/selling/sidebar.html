@@ -6,7 +6,7 @@
                 {% for post in posts %}
                     {% if post.url %}
                         {% if post.url != page.url %}
-                            <article class="media" ng-repeat="post in posts" data-href="{{ post.url }}">
+                            <article class="media" ng-repeat="post in posts" data-href="/selling{{ post.url }}">
                                 <div class="media-left">
                                     <a href="#" class="media-object text-center">
                                         <img src="{{ post.thumb }}" alt="...">
