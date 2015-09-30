@@ -1,25 +1,38 @@
-<h2>Other Sales</h2>
 {% for tag in site.tags %}
-    {% if { tag | first } != 'Chrome_Extension' %}
-        <ul>
-            <h3>{{ tag | first }}</h3>
+    {% if tag[0] != 'Chrome_Extension' and tag[0] != 'Personal_Website' and tag[0] != 'Inactive_Chrome_Extension' and tag[0] != 'Featured_Project' %}
+        <div class="sales">
+            <h3>{{ tag[0] }}</h3>
             {% for posts in tag %}
                 {% for post in posts %}
                     {% if post.url %}
                         {% if post.url != page.url %}
-                            <li>
-                                <a href="{{ post.url }}" title="{{ post.title }}">
-                                    {{ post.title }}
-                                </a>
-                            </li>
+                            <article class="media" ng-repeat="post in posts" data-href="{{ post.url }}">
+                                <div class="media-left">
+                                    <a href="#" class="media-object text-center">
+                                        <img src="{{ post.thumb }}" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{ post.title }}</h4>
+                                    <strong>Asking:</strong>{{ post.price }}
+                                </div>
+                            </article>
                         {% else %}
-                            <li>
-                                {{ post.title }}
-                            </li>
+                            <article class="media active" ng-repeat="post in posts" ng-click="setActive( post )">
+                                <div class="media-left">
+                                    <a href="#" class="media-object text-center">
+                                        <img src="{{ post.thumb }}" alt="...">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{ post.title }}</h4>
+                                    <strong>Asking:</strong>{{ post.price }}
+                                </div>
+                            </article>
                         {% endif %}
                     {% endif %}
                 {% endfor %}
             {% endfor %}
-        </ul>
+        </div>
     {% endif %}
 {% endfor %}

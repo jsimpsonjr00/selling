@@ -11,6 +11,29 @@ body > footer {
 body > footer ul {
 	list-style-type: none;
 }
+.sidebar {
+    padding: 0;
+    border-right: 1px solid #ddd;
+}
+.sidebar h3 {
+    margin:     0;
+    padding:    10px;
+
+    background: #eee;
+}
+.sidebar .media {
+    margin: 0;
+    padding: 15px 10px;
+
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.sidebar .media.active {
+    background: #f9f9f9;
+}
+.content {
+    padding-left: 30px;
+}
 .item, .post-image {
     text-align: center;
     background: #f2f2f2;

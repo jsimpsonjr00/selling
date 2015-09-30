@@ -1,17 +1,17 @@
 <footer>
     <hr/>
-    <div class='container'>
+    <div class='container-fluid'>
         <div class='row'>
             {% for tag in site.tags %}
                 {% if tag[0] != 'Chrome_Extension' and tag[0] != 'Personal_Website' and tag[0] != 'Inactive_Chrome_Extension' and tag[0] != 'Featured_Project' %}
-                    <ul class='span3 sales'>
+                    <ul class='col-xs-12 col-sm-6 col-md-4 col-lg-3 sales'>
                         <h3>{{ tag[0] }}</h3>
                         {% for posts in tag %}
                             {% for post in posts %}
                                 {% if post.url %}
                                     {% if post.url != page.url %}
                                         <li>
-                                            <a href="{{ post.url }}" title="{{ post.title }}">
+                                            <a href="/selling{{ post.url }}" title="{{ post.title }}">
                                                 {{ post.title }}
                                             </a>
                                         </li>
