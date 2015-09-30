@@ -1,6 +1,4 @@
 source:      .
 destination: ./_site
+<<<<<<< HEAD
 baseurl: /posts
-=======
-baseurl: ./
->>>>>>> origin/gh-pages
