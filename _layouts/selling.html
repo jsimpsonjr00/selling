@@ -9,7 +9,7 @@
 
         <title>{{ page.title }}</title>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
         <!--[if lt IE 9]>
             <script src="/js/HTML5Shiv/html5shiv.js"></script>
@@ -47,7 +47,7 @@
 
                 function load( href, $this ) {
                     $.ajax( {
-                        url:        href,
+                        url:        href.replace( '!', '' ),
                         dataType:   'html',
                         method:     'GET'
                     }).done( function( data, textStatus, jqXHR ) {
