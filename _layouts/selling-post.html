@@ -1,38 +1,78 @@
-<section class='col-xs-12 col-lg-9 text-center '>
-    <img src='{{ page.image }}' class='{{ page.image-layout }}'>
-</section>
-<section class='col-xs-12 col-lg-3 post-sidebar'>
-    <h2>{{ page.title }}</h2>
-    <div class='item-details'>
-        <p>
-            {{ content }}
-        </p>
-        <p>
-            <label>Asking Price:</label>{{ page.price }}<br/>
-            <small>All offers considered</small>
-        </p>
-        <section class='trading'>
-            <h3>Accepting trade proposals of</h3>
-            <ul class='wanted'>
-                <li>Newer Sprint Android Phones</li>
-            </ul>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/selling/styles/styles.css">
+
+        <link href="/images/for-sale-favicon.png" rel="shortucut icon">
+        <link rel="image_src" href="{{ page.image }}" />
+
+        <title>{{ page.title }}</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!--[if lt IE 9]>
+            <script src="/js/HTML5Shiv/html5shiv.js"></script>
+        <![endif]-->
+
+        <script>
+            //Function to redirect direct links to full site
+            (function( ) {
+                if( document.location.hash === '' ) {
+                    var splitHref = document.location.href.split( '/selling/' );
+
+                    if( splitHref.length > 1 ) {
+                        document.location.href = splitHref[0] + '/selling/#!/selling/' + splitHref[1];
+                    }
+                }
+            })( );
+        </script>
+    </head>
+    <body>
+        <section class="container-fluid">
+            <div class="row">
+                <section id="content" class="hidden-xs col-sm-7 col-lg-9 content">
+                    <section class='col-xs-12 col-lg-9 text-center '>
+                        <img src='{{ page.image }}' class='{{ page.image-layout }}'>
+                    </section>
+                    <section class='col-xs-12 col-lg-3 post-sidebar'>
+                        <h2>{{ page.title }}</h2>
+                        <div class='item-details'>
+                            <p>
+                                {{ content }}
+                            </p>
+                            <p>
+                                <label>Asking Price:</label>{{ page.price }}<br/>
+                                <small>All offers considered</small>
+                            </p>
+                            <section class='trading'>
+                                <h3>Accepting trade proposals of</h3>
+                                <ul class='wanted'>
+                                    <li>Newer Sprint Android Phones</li>
+                                </ul>
+                            </section>
+                            <h3>Contact Info</h3>
+                            <p>
+                                <label>E-mail: <a href='mailto:jsimpsonjr00@gmail.com?subject={{ page.title }}'>jsimpsonjr00@gmail.com</a></label><br/>
+                                <label>Voicemail: 444 - 4076</label><br/>
+                                <small>Local Cash Only as is no refunds, no warranty</small>
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <a href='/'>Need web development work done?</a>
+                            </p>
+                        </div>
+                        <div class="woot">
+                            <a href="http://midealshop.appspot.com/AutoWoot/" class="btn btn-primary" target='_external'>Do you Woot?</a>
+                            <a href='https://chrome.google.com/webstore/detail/hbhcmbeenpajepmjiddeaojpbdlpfmlb' target='_external' title='Chrome Extension'>
+                                <img src='/images/Chrome-32.png'>
+                            </a>
+                        </div>
+                    </section>
+                </section>
+            </div>
         </section>
-        <h3>Contact Info</h3>
-        <p>
-            <label>E-mail: <a href='mailto:jsimpsonjr00@gmail.com?subject={{ page.title }}'>jsimpsonjr00@gmail.com</a></label><br/>
-            <label>Voicemail: 444 - 4076</label><br/>
-            <small>Local Cash Only as is no refunds, no warranty</small>
-        </p>
-    </div>
-    <div>
-        <p>
-            <a href='/'>Need web development work done?</a>
-        </p>
-    </div>
-    <div class="woot">
-        <a href="http://midealshop.appspot.com/AutoWoot/" class="btn btn-primary" target='_external'>Do you Woot?</a>
-        <a href='https://chrome.google.com/webstore/detail/hbhcmbeenpajepmjiddeaojpbdlpfmlb' target='_external' title='Chrome Extension'>
-            <img src='/images/Chrome-32.png'>
-        </a>
-    </div>
-</section>
+    </body>
+</html>
