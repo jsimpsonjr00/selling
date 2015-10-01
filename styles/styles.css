@@ -11,17 +11,23 @@ body > footer {
 body > footer ul {
 	list-style-type: none;
 }
+img {
+    max-width: 100%;
+}
 .sidebar {
     padding: 0;
     border-right: 1px solid #ddd;
 }
-.sidebar h3 {
+.sidebar .category-heading {
     margin:     0;
     padding:    10px;
 
     background: #eee;
+    border-bottom: 1px solid #ddd;
 }
 .sidebar .media {
+    cursor: pointer;
+
     margin: 0;
     padding: 15px 10px;
 
@@ -38,12 +44,26 @@ body > footer ul {
     max-height: 100%;
 }
 
+.sidebar .media .details {
+    background: #fff;
+    padding:    15px 0;
+    border:     1px solid #ccc;
+}
 .sidebar .media.active {
-    background: #f9f9f9;
+    cursor:     default;
+    background: #f2f2f2;
 }
 
 .content {
-    padding-left: 30px;
+    padding-left:   30px;
+    padding-top:    15px;
+}
+
+.content img {
+    margin-bottom: 15px;
+}
+h2 {
+    margin-top: 0;
 }
 .item, .post-image {
     text-align: center;

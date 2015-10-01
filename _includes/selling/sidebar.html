@@ -1,7 +1,7 @@
 {% for tag in site.tags %}
     {% if tag[0] != 'Chrome_Extension' and tag[0] != 'Personal_Website' and tag[0] != 'Inactive_Chrome_Extension' and tag[0] != 'Featured_Project' %}
         <div class="sales">
-            <h3>{{ tag[0] }}</h3>
+            <h3 class="category-heading">{{ tag[0] }}</h3>
             {% for posts in tag %}
                 {% for post in posts %}
                     {% if post.url %}
