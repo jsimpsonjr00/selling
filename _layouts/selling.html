@@ -52,7 +52,7 @@
                         method:     'GET'
                     }).done( function( data, textStatus, jqXHR ) {
                             $content.html( data );
-                            document.location.hash = href;
+
 
                             if( $active !== null ) {
                                 $active.removeClass( 'active' );
@@ -60,8 +60,17 @@
                             }
 
                             $active = $this.addClass( 'active' );
-                            $details = $( '<div class="details visible-xs">' ).html( data );
+                            $details = $( '<div class="details row visible-xs">' ).html( data );
                             $active.append( $details );
+
+                            //scroll to postion based on screen resolution
+                            if( $( window ).width() > 767 ) {
+                                $( 'html, body').animate({ scrollTop: '0px' });
+
+                            } else {
+                                $( 'html, body').animate({ scrollTop: $this.offset().top });
+                            }
+
                         })
                         .fail( function( jqXHR, textStatus, errorThrown ) {
                             //TODO: show an error
@@ -73,14 +82,18 @@
                     var $this   = $( this ),
                         href    = $this.attr( 'data-href' );
 
-                    if( href !== document.location.hash.replace( '#' ) )
-                        load( href, $this );
+                    if( href !== document.location.hash.replace( '#' ) ) //different hash, change has to trigger load
+                        document.location.hash = href;
                 });
 
-                //TODO: load from hash
-                var $hashlinked = $( '.media[data-href="' + document.location.hash.replace( '#', '' ) + '"]' );
+                //Load from hash with back/forward button support
+                $( window )
+                    .on( 'hashchange', function( e ) {
+                        var $hashlinked = $( '.media[data-href="' + document.location.hash.replace( '#', '' ) + '"]' );
+                        $hashlinked.length > 0 ? load( $hashlinked.attr( 'data-href' ), $hashlinked ) : null;
+                    })
+                    .trigger( 'hashchange' ); //trigger to init for existing hash
 
-                $hashlinked.length > 0 ? load( $hashlinked.attr( 'data-href' ), $hashlinked ) : null;
             })( jQuery );
         </script>
     </body>
